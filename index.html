@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Lab1</title>
+    <style>
+        * {
+            font-size: 16px;             /*Размер шрифта в селекторе элементов*/
+        }
+        body{
+            font-family: 'Montserrat';   /* Общая настройка шрифта и размера текста */	
+            background-color: #E0FFFF
+        }
+        #header {
+            font-style: italic;          /*Установка курсива в шапке*/
+            color: black;              /*Цвет шрифта*/
+            text-align: center;          /*Центрирование текста*/
+            margin-top: 25px;            /*Увеличение отступа от верхнего эл.*/
+            padding: 15px;               /*Внутренние отступы*/
+            border: 2px solid #B0E0E6; /*Рамка вокруг блока*/
+            background-color: #91dde7; /*Цвет внутренноего фона*/
+            border-radius: 20px;         /*Радиус закругления краев блока*/
+            margin-left: auto;           /*Авто отступ от левого края*/ 
+            margin-right: auto;          /*Авто отступ от правого края*/
+            width: 40%;
+        }
+        .block {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            padding: 15px;
+            border: 2px solid #B0E0E6;
+            background-color: #91dde7;
+            border-radius: 30px;
+            width: 40%;
+        }
+        .input_container p{              /*Дочерний селектор с указанием на элемент, где p - потомок*/
+            color: black;
+        }
+        .block > p {
+            color: black;
+            text-decoration: underline;  /*Дочерний селектор с прямым потомком*/
+        }
+        p[lang] {
+            font-weight:bold;            /*Селектор атрибутов*/
+        }
+    
+    </style>   
+ </head>
+ <body>
+
+    <div class="begin" id=header>
+        <div id="student">Соколов Евгений, P3232</div>
+        <div id="variant">Вариант: 32011</div>
+    </div>
+
+    <div class="block">
+        <form action="script.php" method="GET">
+
+            <p lang>Введите значения:</p>
+            <div class="input_container">
+                <p>Значение Y</p>
+                <input type="text" class="pole" placeholder="(-5;3)" name="yCoordinates" required maxlength="5">
+            </div>
+
+            <div class="input_container">
+                <p>Значение R</p>
+                <input type="text" class="pole" placeholder="(2;5)" name="rCoordinates" required maxlength="5">
+            </div>
+
+            <div class="input_container">
+                <p>Значение X</p>
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch1" value="-3" onclick="chFunction1();">
+                    <label for="ch1">-3</label>
+                    
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch2" value="-2" onclick="chFunction2();">
+                    <label for="ch2">-2</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch3" value="-1" onclick="chFunction3();">
+                    <label for="ch3">-1</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch4" value="0" onclick="chFunction4();">
+                    <label for="ch4">0</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch5" value="1" onclick="chFunction5();">
+                    <label for="ch5">1</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch6" value="2" onclick="chFunction6();">
+                    <label for="ch6">2</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch7" value="3" onclick="chFunction7();">
+                    <label for="ch7">3</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch8" value="4" onclick="chFunction8();">
+                    <label for="ch8">4</label>
+
+                    <input class=checkbox type="checkbox" name="xCoordinates" Id="ch9" value="5" onclick="chFunction9();">
+                    <label for="ch9">5</label> <br>
+
+                    <div class="EndButton">
+                        <p> <button type="submit" onclick="validateY();" >Результат</button> </p>
+                    </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="block" id="img">
+        <img src="img1.png">
+
+        <div><a href="https://github.com/MoonCel/Web1"><img src="github.png" width="25" 
+            height="25"></a>
+        
+        </div>
+    </div>
+
+ </body>
+<script>
+    function chFunction1(){
+
+        if (document.querySelector('#ch1').checked){
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction2(){
+
+        if (document.querySelector('#ch2').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+    
+    function chFunction3(){
+
+        if (document.querySelector('#ch3').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction4(){
+
+        if (document.querySelector('#ch4').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction5(){
+
+        if (document.querySelector('#ch5').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction6(){
+
+        if (document.querySelector('#ch6').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction7(){
+
+        if (document.querySelector('#ch7').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch8').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction8(){
+
+        if (document.querySelector('#ch8').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch9').checked = false;
+        }
+    }
+
+    function chFunction9(){
+
+        if (document.querySelector('#ch9').checked){
+            document.getElementById('ch1').checked = false;
+            document.getElementById('ch2').checked = false;
+            document.getElementById('ch3').checked = false;
+            document.getElementById('ch4').checked = false;
+            document.getElementById('ch5').checked = false;
+            document.getElementById('ch6').checked = false;
+            document.getElementById('ch7').checked = false;
+            document.getElementById('ch8').checked = false;
+        }
+    }
+
+    function validateY() {
+        var coordinateY = document.getElementById("yCoordinates");
+        var coordinateR = document.getElementById("rCoordinates");
+
+        if(!coordinateY.value){
+            event.preventDefault();
+            alert('Заполните все данные');
+        } else if (parseFloat(coordinateY.value)<= -5 || parseFloat(coordinateY.value)>= 3) {
+            event.preventDefault();
+            alert('Координата Y должна принадлежать диапазону (-5; 3)');
+        } else if(!coordinateR.value){
+            event.preventDefault();
+            alert('Заполните все данные');
+        } else if (parseFloat(coordinateR.value)<= 2 || parseFloat(coordinateR.value)>= 5) {
+            event.preventDefault();
+            alert('Координата R должна принадлежать диапазону (2; 5)');
+        }
+    }
+
+</script>
+
+</html>
